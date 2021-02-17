@@ -4,15 +4,12 @@ import getuserid from "./getuserid.js";
 import getfeaturedplaylists from "./getfeaturedplaylists.js";
 
 let access_token="";
-let query=window.location.href;
-for(let i=0;i<query.length;i++)
+let query=[...window.location.href];
+if(query[44]=='#')
 {
-    if(query[i]=="#")
-    {
-        query[i]="?";
-        location.replace(query);
-        break;
-    }
+    query[44]='?';
+    query=query.join('');
+    location.replace(query);
 }
 query=window.location.search;
 console.log(query);
