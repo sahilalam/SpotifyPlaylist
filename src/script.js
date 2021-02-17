@@ -4,7 +4,7 @@ import getuserid from "./getuserid.js";
 import getfeaturedplaylists from "./getfeaturedplaylists.js";
 
 let access_token="";
-let query=window.location;
+let query=window.location.href;
 for(let i=0;i<query.length;i++)
 {
     if(query[i]=="#")
