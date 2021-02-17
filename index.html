@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="bg-dark text">
+    <div class="container-fluid">
+        <div class="row m-0 justify-content-center text-center">
+            <div class="col-12">
+                <img src="./Media/logo.png" style="height: 300px;">
+            </div>
+            <div class="col-12 heading1">
+                Spotify Playlists
+            </div>
+        </div>
+        <div class="row m-0 justify-content-center text-center" id="wait">
+            <div class="col-12 text-center" >
+                <img src="./Media/loading.gif" style="height: 200px;">
+            </div>
+        </div>
+        <div class="row m-0 justify-content-center text-center" id="login">
+            <div class="col-4">
+                <a href="#" style="text-decoration: none;" id="lg">
+                    <div class="button">
+                        Login
+                    </div>
+                </a>
+                <div class="col-12 heading2">
+                    Please Login to Continue
+                </div>
+                
+            </div>
+        </div>
+        <div class="row m-0 p-2 justify-content-between" id="content">
+            <div class="col-lg-3 col-md-5 col-12 m-0" id="menu">
+                <div class="row m-0 mb-3 p-0">
+                    <div class="col-12">
+                        <a href="#" style="text-decoration: none;" id="myplaylists">
+                            <div class="button">My Playlists</div>
+                        </a>
+                    </div>
+                    <div class="col-12">
+                        <a href="#" id="search" style="text-decoration: none;">
+                            <div class="button" id="featuredplaylist">
+                                Featured Playlists
+                            </div>
+                        </a>
+                    </div>
+                    
+                </div>
+                
+                
+                
+            </div>
+            <div class="col-lg-9 col-md-7 col-12 m-0" id="results">
+                <div class="row box m-0">
+                    <div class="col-12 box box-head heading2 text-center" id="resultheading">
+                        Sahil
+                    </div>
+                </div>
+                <div class="row p-1 m-0">
+                    <div class="col-6 p-1 m-0">
+                        <a href="#" class="text" style="text-decoration: none;" id="prev">
+                            prev
+                        </a>
+                    </div>
+                    <div class="col-6 p-1 m-0  text-right" >
+                        <a href="#" class="text" style="text-decoration: none;" id="next">
+                            next
+                        </a>
+                    </div>
+                </div>
+                <div class="row box m-0 p-1 justify-content-center" style="height: 500px;overflow: scroll;" id="resultcontent">
+                   
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script type="module" src="./src/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+</html>
