@@ -3,6 +3,7 @@ import getplaylists from "./getplaylists.js";
 import getuserid from "./getuserid.js";
 import getfeaturedplaylists from "./getfeaturedplaylists.js";
 
+let access_token="";
 let query=window.location;
 for(let i=0;i<query.length;i++)
 {
