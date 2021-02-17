@@ -3,8 +3,18 @@ import getplaylists from "./getplaylists.js";
 import getuserid from "./getuserid.js";
 import getfeaturedplaylists from "./getfeaturedplaylists.js";
 
-let access_token="";
-let query=window.location.search;
+let query=window.location;
+for(let i=0;i<query.length;i++)
+{
+    if(query[i]=="#")
+    {
+        query[i]="?";
+        location.replace(query);
+        break;
+    }
+}
+query=window.location.search;
+console.log(query);
 if(query.length>0)
 {
     const params=new URLSearchParams(query);
