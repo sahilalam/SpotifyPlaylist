@@ -22,12 +22,12 @@ let getplaylists=(url,access_token,user_id,type)=>{
         
         for(let i=0;i<d.items.length;i++)
         {
-            console.log(d.items[i]);
+            console.log(d.items[i].owner.id);
             let maincol=document.createElement('div');
             maincol.setAttribute('class',"col-md-3 col-8 m-3 p-0");
             let col=setcol(d.items[i]);
             col.onclick=()=>{
-                getsongs(d.items[i].tracks.href+`?access_token=${access_token}&offset=0&limit=9`,access_token,maincol,1,user_id,d.items[i].id);
+                getsongs(d.items[i].tracks.href+`?access_token=${access_token}&offset=0&limit=9`,access_token,maincol,1,user_id,d.items[i].id,d.items[i].owner.id);
             }
             col.setAttribute("id",`${d.items[i].id}`);
             

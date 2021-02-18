@@ -2,6 +2,7 @@ import login from "./login.js";
 import getplaylists from "./getplaylists.js";
 import getuserid from "./getuserid.js";
 import getfeaturedplaylists from "./getfeaturedplaylists.js";
+import search from "./search.js";
 
 let access_token="";
 let query=[...window.location.href];
@@ -25,6 +26,9 @@ let user_id="";
 
 if(access_token.length>0)
 {
+    setTimeout(()=>{
+        location.replace(`https://sahilalam.github.io/SpotifyPlaylist/`);
+    },3600000);
     document.getElementById('wait').hidden=true;
     document.getElementById('login').hidden=true;
     document.getElementById('content').hidden=false;
@@ -37,6 +41,9 @@ if(access_token.length>0)
     }
     document.getElementById('featuredplaylist').onclick=()=>{
         getfeaturedplaylists(access_token,user_id,"featuredplaylist");
+    }
+    document.getElementById('tracksbutton').onclick=()=>{
+        search(access_token,user_id);
     }
     document.getElementById('myplaylists').click();
 

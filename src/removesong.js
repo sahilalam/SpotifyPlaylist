@@ -1,23 +1,25 @@
-let getdata=async(url,position,uri)=>{
-    console.log(uri,position)
+let getdata=async(url,uri)=>{
     let data=await fetch(url,{
         method:'DELETE',
-        body:{
-            tracks: [
-              {
-                uri: `${uri}`,
-                positions: [
-                  position
-                ]
-              }
+        body:JSON.stringify({
+            "tracks": [
+            {
+              "uri": `${uri}`
+            }
             ]
-          }
+        })
     })
     data=await data.json();
     console.log(data)
     return data;
 }
-let removesong=(user_id,p_id,access_token,position,uri)=>{
+let removesong=(user_id,p_id,access_token,uri)=>{
     let url=`https://api.spotify.com/v1/playlists/${p_id}/tracks?access_token=${access_token}`;
+    getdata(url,uri).then((data)=>{
+        console.log(data);
+        document.getElementById(`${p_id}`).click();
+    }).catch((err)=>{
+        console.log(err);
+    })
 }
 export default removesong;
