@@ -28,13 +28,16 @@ let getsongs=(url,access_token,col,page,user_id,p_id,owner_id,flag=false)=>{
         
         for(let i=0;i<d.items.length;i++)
         {
-            console.log(d.items[i]);
-            let maincol=document.createElement('div');
-            maincol.setAttribute("class","col-md-3 col-8 p-0 m-3 box");
+            if(d.items[i])
+            {
+                let maincol=document.createElement('div');
+                maincol.setAttribute("class","col-md-3 col-8 p-0 m-3 box");
+                
+                let col=setcolsongs(d.items[i],access_token,user_id,p_id,owner_id,flag);
+                maincol.append(col);
+                row1.append(maincol);
+            }
             
-            let col=setcolsongs(d.items[i],access_token,user_id,p_id,owner_id,flag);
-            maincol.append(col);
-            row1.append(maincol);
         }
         
         row.append(row1);
